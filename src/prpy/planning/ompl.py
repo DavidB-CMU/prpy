@@ -117,7 +117,7 @@ class OMPLPlanner(BasePlanner):
         
         extraParams = ''
         for chain in tsrchains:
-            extraParams += '<{k:s}>{v:s}</{k:s}>'.format(k = 'tsr_chain', v=chain.serialize())
+            extraParams += '<{k:s}>{v:s}</{k:s}>'.format(k = 'tsr_chain', v=chain.to_json())
             
         return self._Plan(robot, formatted_extra_params=extraParams, **kw_args)
 
